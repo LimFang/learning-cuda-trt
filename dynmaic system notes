@@ -1,0 +1,65 @@
+2.	系统的随机退化过程确实与物理dynamic有一定的联系，也有一定的研究基础D:\downloaded\gao-duan-2023-stochastic-dynamics-and-data-science.pdf
+这种时间序列体现的dynamic就和Neural Manifold ODE 联系起来 
+
+
+ODE（常微分方程）：
+
+适用于描述系统的时间演化，例如机械系统中的振动、电路中的电压变化等。
+当系统演化是确定性的，即不涉及随机性或外部干扰时，常微分方程是一个合适的选择。
+常微分方程的求解方法相对较简单，因此在工程领域中常常被广泛应用。
+PDE（偏微分方程）：
+
+适用于描述空间中的系统演化，例如热传导、流体流动、电磁场等。
+当系统演化涉及多个空间变量时，偏微分方程是一种自然的选择。
+PDE的解决方法可能比ODE复杂一些，但它们提供了对空间中演化的更详细的描述，因此在涉及空间变化的工业场景中很有用。
+SDE（随机微分方程）：
+
+适用于描述系统演化中存在随机性或不确定性的情况，例如金融市场的波动、化学反应中的随机性等。
+当系统演化受到随机外部因素的影响时，随机微分方程提供了一种更真实的描述方式。
+SDE的求解和分析可能比ODE和PDE更复杂，但在需要考虑随机性的工业场景中，它们是不可或缺的工具。
+总的来说，对于工业场景中的具体问题，需要根据系统的性质和演化规律来选择合适的方程类型。在实际应用中，有时候也会结合使用不同类型的方程来更全面地描述系统的行为。
+在动力系统中，动态（dynamic）通常由一组ODE描述。ODE描述了系统状态随时间的演变，而ODE流形则是描述系统状态空间的一种几何结构。动态系统的动态可以在ODE流形上展现为轨道或者流形上的演化。换句话说，动态系统的行为可以通过ODE流形的几何特征来理解和分析； governing law”（管控定律）指的是描述系统行为的基本规律或者数学模型。在物理学和工程学中，通常通过这些定律来描述系统的演化、运动或者其他特征。这些定律可以是基于物理原理、动力学方程或者其他理论基础建立的数学表达式。
+
+具体来说，在上文提到的情景中，指的是用一些基本的物理或数学定律来构建系统的数学模型，这个模型可以描述系统的动态行为，比如描述系统状态随时间的演变、变化的趋势以及可能存在的随机性或不确定性。
+
+在描述动态系统时，这些定律可以包括常微分方程、偏微分方程、随机微分方程等。通过这些方程，我们可以理解系统内部的机制，预测系统未来的行为，并进行决策和分析。
+
+目前利用深度学习和机器学习来进行随机动态系统的governing law提取
+1.	Lévy 过程：Lévy 过程是一种随机过程，具有独立增量、稳定分布和马尔可夫性质，通常用于描述具有跳跃性质的随机变化。
+2.	对称 α-稳定 Lévy 运动：描述了 Lévy 过程中的一维跳跃性质。这种随机过程在非零实数位置上的跳跃强度和方向由跳跃测度 να 描述，而跳跃测度的形式为 να(dx) = C(1,α)‖x‖^(-1-α) dx，其中 �∈�1\{0}x∈R1\{0} 是非零实数，而 C(1,α) 是归一化常数。
+3.	Jump Measure（跳跃测度）：描述了 Lévy 过程中跳跃的强度和方向的测度。在对称 α-稳定 Lévy 过程中，跳跃测度描述了非零实数位置上跳跃的概率与跳跃大小的关系，其中跳跃的强度和方向由非零实数位置 �x 决定。
+��dx 只是一个符号，用来表示积分的变量或测度的变元，并不意味着 �x 是一个向
+
+"Transition phenomena"（转变现象）是指在动力系统中从一个状态到另一个状态的变化过程。在随机动力系统中，这种转变可能由于系统受到外部扰动或噪声的影响而发生，导致系统从一个稳定状态转移到另一个稳定状态，或者从一个状态转移到一个不稳定状态。这种转变通常是非线性和复杂的，可能伴随着大幅度的波动和变化。
+慢流形（slow manifold）是指在多尺度动力系统中的一个低维子流形，其在相空间中对应着系统的慢变量（slow variables）的运动轨迹。在多尺度系统中，通常存在快速变化的变量和相对缓慢变化的变量。慢流形是在快速变化的变量上观察到的一种整体稳定的结构，其上的变化相对较慢。
+
+慢流形的存在使得系统在高维相空间中的演化可以被简化为在慢流形上的演化，从而大大降低了系统的复杂度。通过对慢流形的分析和理解，可以更好地理解系统的动力学行为，识别系统的稳定态和转变现象，并且可以用来进行参数估计和模型简化。
+
+在许多复杂的动力系统中，慢流形起着关键的作用，它们帮助我们理解系统的多尺度行为，并且为我们研究和解释系统的动力学行为提供了重要的见解
+
+"[41] is about a slow-fast data assimilation system under Gaussian noisy fluctuations."：文献[41]讨论的是一个受高斯噪声波动影响的慢-快数据同化系统。
+
+"First, we obtain its low-dimensional reduction via an invariant slow manifold."：首先，通过一个不变的慢流形，我们获得了它的低维度降维。
+
+"Second, we prove that the low-dimensional filter on the slow manifold approximates the original filter in a suitable metric."：其次，我们证明了慢流形上的低维度滤波器在适当的度量下逼近了原始滤波器。
+
+"Yuan et al. [59] concern with the dynamics of a class of slow–fast stochastic dynamical systems driven by non-Gaussian stable L ́evy noise with a scale parameter."：Yuan等人[59]关注的是一类由非高斯稳定L ́evy噪声驱动的慢-快随机动力系统的动态，其中包含一个尺度参数。
+
+"Slow manifolds with exponentially tracking property are constructed, and then they eliminate the fast variables to reduce the dimensions of these stochastic dynamical systems."：构建具有指数跟踪特性的慢流形，然后消除快速变量以减小这些随机动力系统的维度。
+
+"It is shown that as the scale parameter tends to zero, the slow manifolds converge to critical manifolds in distribution, which helps to investigate long-time dynamics."：结果表明，随着尺度参数趋于零，慢流形在分布上收敛到临界流形，这有助于研究长时间动力学。
+
+"The approximations of slow manifolds with error estimate in distribution are also established."：还建立了在分布上具有误差估计的慢流形的近似。
+
+"In [61], we firstly analyze the strong convergence of projective integration method for multiscale stochastic dynamical systems driven by alpha-stable processes, which is used to estimate the effect that the fast components have."：在[61]中，我们首先分析了多尺度随机动力系统的投影积分方法的强收敛性，该方法由alpha稳定过程驱动，用于估计快速分量的影响。
+
+这些研究结果涉及了在不同类型的随机动力系统中，通过降维方法构建慢流形以及研究慢流形与原系统之间的收敛关系。这些研究有助于理解复杂系统的长期行为，并为降维建模提供了有效的工具和理论基础。
+Ren等人[43]开发了一种针对慢-快随机动力系统的参数估计方法，其中只有慢分量是可观测的。通过利用对慢分量的观测，可以通过研究随机慢流形上的慢系统来估计系统参数。这种方法在量化随机动力系统中的参数时具有降维的优势。一些数值实例还表明，降维后的慢系统是原始慢-快随机动力系统参数估计器的良好近似。
+
+He等人[25]设计了一种基于Smoluchowski–Kramers近似的一阶系统的简化参数估计器，用于二阶随机微分方程。他们通过对一种在保守力和恒定扩散下的胶体颗粒在水中运动的实验模型进行了说明。
+
+Chao等人[5]针对L ́evy噪声情况，建立了一个针对快-慢随机系统的参数估计方法，其中噪声是非高斯α稳定的L ́evy噪声（0 <α<2）。当观测仅适用于慢分量时，通过随机慢流形逼近的降维系统的帮助，可以估计系统参数，并通过p-moment (p ∈ (1,α))来量化此估计的准确性。这种方法由于在随机系统中的降维而在计算复杂性和成本方面具有优势。
+
+Zulfiqar等人[64,65]为一个具有异常扩散的快-慢动力系统建立了一个慢流形，其中快慢两个分量都受到白噪声或稳定的L ́evy噪声的影响。他们构建了一个针对非局部快-慢随机动力系统的参数估计方法，其中只有慢分量是可观测的。
+
+综上所述，这些研究提供了一系列方法和技术，利用慢流形来进行参数估计，从而增进了对复杂动力系统行为的理解，并为实际应用中的参数估计问题提供了解决方案。
